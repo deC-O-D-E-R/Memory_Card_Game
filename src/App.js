@@ -48,7 +48,8 @@ const App = () => {
 
   return (
     <div className="memory-game">
-      <h1>Memory Card Game</h1>
+      <h1>Welcome to the Workshop Project</h1>
+      <h2>Memory Card Game</h2>
       <p>Attempts: {attempts}</p>
       <div className="card-grid">
         {cards.map((card, index) => (
