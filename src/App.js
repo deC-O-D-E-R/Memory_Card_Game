@@ -16,6 +16,20 @@ const App = () => {
     setCards(shuffledCards);
   }, []);
 
+  //Integrating UTM parameters
+  useEffect(() => {
+    const getUTMParameters = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmParams = {
+        utm_source: urlParams.get('utm_source'),
+        utm_medium: urlParams.get('utm_medium'),
+        utm_campaign: urlParams.get('utm_campaign'),
+        utm_term: urlParams.get('utm_term'),
+        utm_content: urlParams.get('utm_content'),
+      };
+      console.log("UTM Parameters:", utmParams);
+    };
+
   const handleCardClick = (index) => {
     // Skip if card is flipped or matched, or if two cards are already flipped
     if (cards[index].isFlipped || cards[index].isMatched || flippedCards.length === 2) return;
