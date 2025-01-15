@@ -16,7 +16,7 @@ const App = () => {
     setCards(shuffledCards);
   }, []);
 
-  //Integrating UTM parameters
+  // Integrating UTM parameters
   useEffect(() => {
     const getUTMParameters = () => {
       const urlParams = new URLSearchParams(window.location.search);
@@ -29,6 +29,10 @@ const App = () => {
       };
       console.log("UTM Parameters:", utmParams);
     };
+    
+    // Call the function to log UTM parameters
+    getUTMParameters();
+  }, []); // This useEffect runs once when the component mounts
 
   const handleCardClick = (index) => {
     // Skip if card is flipped or matched, or if two cards are already flipped
